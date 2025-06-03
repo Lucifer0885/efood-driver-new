@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "local-host": "ng serve --host 192.168.1.2 --port 4200 --disable-host-check",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -19,7 +20,11 @@
     "@angular/router": "^19.2.0",
     "@capacitor/android": "^7.2.0",
     "@capacitor/core": "^7.2.0",
+    "@capacitor/geolocation": "^7.1.2",
     "@capacitor/ios": "^7.2.0",
+    "@ng-icons/core": "^31.4.0",
+    "@ng-icons/heroicons": "^31.4.0",
+    "@ng-icons/lucide": "^31.4.0",
     "@tailwindcss/postcss": "^4.1.8",
     "animate.css": "^4.1.1",
     "daisyui": "^5.0.43",

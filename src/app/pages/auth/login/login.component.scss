@@ -1,4 +1,4 @@
-// @import 'animate.css/animate.css';
+@import 'animate.css/animate.css';
 
 // .running {
 //   @extend .animate__animated;
@@ -6,6 +6,6 @@
 //   @extend .animate__infinite;
 // }
 
-// .running {
-//   animation: bounce 1s infinite;
-// }
+.running {
+  animation: bounce 1s infinite;
+}
