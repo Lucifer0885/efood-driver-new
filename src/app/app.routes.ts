@@ -18,7 +18,7 @@ export const routes: Routes = [
           import('./pages/auth/register/register.component').then(
             (c) => c.RegisterComponent
           ),
-      }
+      },
     ],
   },
   {
@@ -32,15 +32,13 @@ export const routes: Routes = [
       {
         path: '',
         loadComponent: () =>
-          import('./pages/home/home.component').then(
-            (c) => c.HomeComponent
-          ),
-      }
-    ]
+          import('./pages/home/home.component').then((c) => c.HomeComponent),
+      },
+    ],
   },
   {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
-  }
+  },
 ];

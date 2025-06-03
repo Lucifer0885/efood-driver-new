@@ -8,10 +8,10 @@ import { finalize } from 'rxjs';
   selector: 'app-login',
   imports: [RouterLink, ReactiveFormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  private fb: FormBuilder = inject(FormBuilder);
+  private fb = inject(FormBuilder);
   private authService = inject(AuthService);
 
   public loading = false;
@@ -19,7 +19,10 @@ export class LoginComponent {
 
   public form = this.fb.group({
     email: ['', Validators.compose([Validators.required, Validators.email])],
-    password: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+    password: [
+      '',
+      Validators.compose([Validators.required, Validators.minLength(6)]),
+    ],
   });
 
   public login() {
@@ -29,15 +32,17 @@ export class LoginComponent {
     }
 
     this.loading = true;
-    this.authService.login(email, password)
-      .pipe(finalize(() => this.loading = false))
+    this.errorMessage = '';
+    this.authService
+      .login(email, password)
+      .pipe(finalize(() => (this.loading = false)))
       .subscribe(
-        (response: any) => {
-        console.log(response);
+        (response) => {
+          console.log(response);
         },
-        (response: any) => {
-          this.errorMessage = response.error?.message || "An error occurred";
+        (response) => {
+          this.errorMessage = response.error?.message || 'An error occurred';
         }
-    )
+      );
   }
 }

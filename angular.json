@@ -91,6 +91,7 @@
               }
             ],
             "styles": [
+              "animate.css/animate.css",
               "src/styles.scss"
             ],
             "scripts": []
