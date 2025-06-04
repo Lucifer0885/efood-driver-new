@@ -1,0 +1,79 @@
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { OrderService } from '../../services/order.service';
+import { CurrencyPipe, JsonPipe } from '@angular/common';
+import { LocationService } from '../../services/location.service';
+import { GoogleMap, MapMarker } from '@angular/google-maps';
+import { finalize } from 'rxjs';
+
+@Component({
+  selector: 'app-order-details',
+  imports: [JsonPipe, GoogleMap, MapMarker, CurrencyPipe],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  templateUrl: './order-details.component.html',
+  styleUrl: './order-details.component.scss',
+})
+export class OrderDetailsComponent {
+  private orderId: string = '';
+  private route = inject(ActivatedRoute);
+  private orderService = inject(OrderService);
+
+  public locationService = inject(LocationService);
+  public order: any = null;
+  public options: any = {};
+  public loader = {
+    startDelivery: false,
+    completeDelivery: false,
+    completePayment: false,
+  };
+
+  constructor() {
+    this.route.params.subscribe((params) => {
+      this.orderId = params['id'];
+      // Here you can fetch order details using this.orderId
+      this.fetchOrderDetails();
+    });
+  }
+
+  fetchOrderDetails() {
+    this.orderService.getOrderDetails(this.orderId).subscribe((response) => {
+      this.order = response.data?.order || null;
+    });
+  }
+
+  startDelivery() {
+    this.loader.startDelivery = true;
+    this.orderService
+      .startDelivery(this.orderId)
+      .pipe(finalize(() => (this.loader.startDelivery = false)))
+      .subscribe((response) => {
+        if (response.success) {
+          this.fetchOrderDetails();
+        }
+      });
+  }
+
+  completePayment() {
+    this.loader.completePayment = true;
+    this.orderService
+      .completePayment(this.orderId)
+      .pipe(finalize(() => (this.loader.completePayment = false)))
+      .subscribe((response) => {
+        if (response.success) {
+          this.fetchOrderDetails();
+        }
+      });
+  }
+
+  completeDelivery() {
+    this.loader.startDelivery = true;
+    this.orderService
+      .completeDelivery(this.orderId)
+      .pipe(finalize(() => (this.loader.startDelivery = false)))
+      .subscribe((response) => {
+        if (response.success) {
+          this.fetchOrderDetails();
+        }
+      });
+  }
+}

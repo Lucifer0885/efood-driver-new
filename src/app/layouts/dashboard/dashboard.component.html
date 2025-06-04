@@ -17,7 +17,7 @@
   <div class="navbar-center">
     <a class="flex items-center">
       <img src="/images/icon.png" alt="logo" class="w-6 h-6 me-2" />
-      IEK EFOOD 360
+      Efood Driver
     </a>
   </div>
   <div class="navbar-end">
@@ -29,9 +29,9 @@
         tabindex="0"
         class="menu menu-sm dropdown-content bg-base-100 rounded-2xl z-1 mt-3 w-52 p-2 shadow flex flex-col gap-2"
       >
-        <div>Hello {{ authService.user?.name }}!</div>
+        <div>Γεια σου {{ authService.user?.name }}!</div>
         <ul>
-          <li><a (click)="authService.logout()">Logout</a></li>
+          <li><a (click)="authService.logout()">Αποσύνδεση</a></li>
         </ul>
       </div>
     </div>
@@ -43,7 +43,7 @@
     <div class="flex flex-col gap-4 p-4">
       <div role="alert" class="alert sm:alert-horizontal bg-base-300">
         <ng-icon name="heroMapPin" size="24"></ng-icon>
-        <span>We need permission to see your location.</span>
+        <span>Xρειαζόμαστε άδεια για να δούμε την τοποθεσία σας</span>
         <div>
           <button (click)="locationService.requestLocationPermission()" class="btn btn-sm btn-primary">Provide</button>
         </div>
@@ -55,7 +55,7 @@
             <div role="alert" class="alert alert-horizontal alert-success alert-dash">
                 <ng-icon name="heroMapPin" size="24"></ng-icon>
                 <div>
-                    <div>Location granted.</div>
+                    <div>Η τοποθεσία παραχωρήθηκε.</div>
                     <div class="text-sm text-gray-500">
                         {{ locationService.location.latitude }}, {{ locationService.location.longitude }}
                     </div>
