@@ -1,59 +1,117 @@
-# EfoodDriver
+# eFood Driver App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.13.
+A modern, cross-platform mobile application for food delivery drivers, providing an intuitive interface for order management, navigation, and delivery tracking.
 
-## Development server
+## 📱 Overview
 
-To start a local development server, run:
+The eFood Driver App is designed to empower delivery partners with a seamless experience to handle food delivery orders efficiently. This application connects restaurants with drivers to ensure timely and accurate food deliveries to customers.
 
-```bash
-ng serve
-```
+## ⚙️ Technology Stack
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Frontend Web**: HTML, TypeScript, SCSS
+- **iOS**: Swift
+- **Android**: Java
+- **Backend Integration**: RESTful API connections
 
-## Code scaffolding
+## 🚀 Features
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Real-time Order Management**: Accept, track, and complete delivery orders
+- **GPS Navigation**: Integrated maps for optimal routing
+- **Earnings Dashboard**: Track daily, weekly, and monthly earnings
+- **Delivery Status Updates**: Keep customers informed about their order status
+- **Profile Management**: Manage driver profile, vehicle information, and availability status
+- **Push Notifications**: Real-time alerts for new orders and updates
 
-```bash
-ng generate component component-name
-```
+## 🛠️ Setup and Installation
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Prerequisites
 
-```bash
-ng generate --help
-```
+- Node.js (v14 or above)
+- Xcode for iOS development
+- Android Studio for Android development
+- Ruby for build scripts
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Web Development Setup
 
 ```bash
-ng test
+# Clone the repository
+git clone https://github.com/Lucifer0885/efood-driver-new.git
+
+# Navigate to the project directory
+cd efood-driver-new
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### iOS Setup
 
 ```bash
-ng e2e
+# Navigate to the iOS directory
+cd ios
+
+# Install CocoaPods dependencies
+pod install
+
+# Open the workspace in Xcode
+open eFood.xcworkspace
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Android Setup
 
-## Additional Resources
+```bash
+# Open the project in Android Studio
+# Navigate to the android directory and open build.gradle
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📦 Building for Production
+
+### Web
+
+```bash
+npm run build
+```
+
+### iOS
+
+Build the project using Xcode's archive functionality.
+
+### Android
+
+Build the project using Android Studio's build APK option.
+
+## 🔄 Workflow
+
+1. Driver logs in to the application
+2. Available orders are displayed with restaurant location and delivery address
+3. Driver accepts an order
+4. Navigation guides the driver to the restaurant
+5. Driver confirms pickup
+6. Navigation guides the driver to the customer
+7. Driver confirms delivery completion
+8. Driver returns to available status for new orders
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 📞 Support
+
+For support, please open an issue in the GitHub repository or contact the repository owner.
+
+---
+
+Made with ❤️ by [Lucifer0885](https://github.com/Lucifer0885)
+
+Last updated: 2025-06-04
