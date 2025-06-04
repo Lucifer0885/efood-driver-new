@@ -5,7 +5,7 @@
       <figure class="relative">
         <img [src]="order.store.cover" alt="store-cover" />
         <div
-          class="absolute top-4 right-4 w-16 h-16 text-black text-3xl rounded-full flex items-center justify-center"
+          class="absolute top-4 right-4 w-16 h-16 text-black text-3xl rounded-full flex items-center justify-center z-10"
           [class.bg-success]="order.payment_method === 'card'"
           [class.bg-warning]="order.payment_method === 'cod'"
         >
@@ -19,6 +19,12 @@
           class="absolute top-4 left-4 w-16 h-16 bg-base-100 text-neutral-content text-2xl font-bold rounded-full flex items-center justify-center"
         >
           {{ order.id }}
+        </div>
+        <div
+          class="absolute top-4 left-22 h-16 bg-blue-700 px-5 text-neutral-content text-2xl font-bold rounded-full flex items-center justify-center"
+        >
+          <ng-icon name="heroClock" class="me-2" />
+          {{ order.preparation_at | timeFromNow }}
         </div>
       </figure>
       <div class="card-body">

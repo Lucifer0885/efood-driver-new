@@ -4,10 +4,11 @@ import { CurrencyPipe, DecimalPipe } from '@angular/common';
 import { NgIcon } from '@ng-icons/core';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { Router } from '@angular/router';
+import { TimeFromNowPipe } from '../../pipes/time-from-now.pipe';
 
 @Component({
   selector: 'app-orders-list',
-  imports: [NgIcon, CurrencyPipe, DecimalPipe, SweetAlert2Module],
+  imports: [NgIcon, CurrencyPipe, DecimalPipe, SweetAlert2Module, TimeFromNowPipe],
   templateUrl: './orders-list.component.html',
   styleUrl: './orders-list.component.scss',
 })
